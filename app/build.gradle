@@ -32,9 +32,9 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
 
-    // Kodein
-    implementation "org.kodein.di:kodein-di-generic-jvm:$rootProject.kodein_version"
-    implementation "org.kodein.di:kodein-di-framework-android-x:$rootProject.kodein_version"
+    // Koin
+    implementation "org.koin:koin-core:$rootProject.koin_version"
+    implementation "org.koin:koin-core-ext:$rootProject.koin_version"
 
     // Better dateTime-time support even on older Android versions
     implementation "com.jakewharton.threetenabp:threetenabp:1.1.0"

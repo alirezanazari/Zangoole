@@ -12,7 +12,7 @@ import ir.alirezanazari.data.entity.AlarmModel
 interface AlarmDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(alarm: AlarmModel): Observable<Boolean>
+    fun upsert(alarm: AlarmModel)
 
     @Query("select * from $ALARM_TBL_NAME")
     fun getAlarms(): Observable<List<AlarmModel>>

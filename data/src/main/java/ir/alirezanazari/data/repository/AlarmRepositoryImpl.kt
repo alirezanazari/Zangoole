@@ -25,7 +25,8 @@ class AlarmRepositoryImpl(
     }
 
     override fun upsertAlarm(alarm: AlarmEntity): Observable<Boolean> {
-        return alarmDb.upsert(convertAlarmForDb(alarm))
+        alarmDb.upsert(convertAlarmForDb(alarm))
+        return Observable.empty<Boolean>()
     }
 
     //helpers

@@ -7,15 +7,15 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
 
 
-abstract class UseCase<T, P>(private val io: Scheduler, private val ui: Scheduler) {
+abstract class UseCaseNoParam<T>(private val io: Scheduler, private val ui: Scheduler) {
 
     private var disposable: CompositeDisposable = CompositeDisposable()
 
-    abstract fun build(param: P): Observable<T>
+    abstract fun build(): Observable<T>
 
-    fun execute(observer: DisposableObserver<T>, param: P) {
+    fun execute(observer: DisposableObserver<T>) {
 
-        val observable: Observable<T> = build(param)
+        val observable: Observable<T> = build()
             .subscribeOn(io)
             .observeOn(ui)
 

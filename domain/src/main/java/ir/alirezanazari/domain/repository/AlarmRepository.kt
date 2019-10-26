@@ -10,6 +10,6 @@ interface AlarmRepository {
 
     fun getAlarms() : Observable<List<AlarmEntity>>
 
-    fun setAlarm(alarm: AlarmEntity) : Observable<Boolean>
+    fun upsertAlarm(alarm: AlarmEntity): Observable<Boolean>
 
 }

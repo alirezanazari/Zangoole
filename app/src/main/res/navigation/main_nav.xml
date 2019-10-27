@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/alarmListFragment">
+
+    <fragment
+        android:id="@+id/alarmListFragment"
+        android:name="ir.alirezanazari.zangoole.ui.alarmList.AlarmListFragment"
+        android:label="fragment_alarm_list"
+        tools:layout="@layout/fragment_alarm_list">
+        <action
+            android:id="@+id/openDetail"
+            app:destination="@id/alarmDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmDetailFragment"
+        android:name="ir.alirezanazari.zangoole.ui.alarmDetail.AlarmDetailFragment"
+        android:label="fragment_alarm_detail"
+        tools:layout="@layout/fragment_alarm_detail">
+        <argument
+            android:name="detailId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="ir.alirezanazari.zangoole.ui.alarm.AlarmFragment"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
+</navigation>

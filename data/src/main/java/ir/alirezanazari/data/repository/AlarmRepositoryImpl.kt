@@ -11,16 +11,12 @@ class AlarmRepositoryImpl(
 ) : AlarmRepository {
 
     override fun getAlarmById(id: Int): Observable<AlarmEntity> {
-        return alarmDb.getAlarmById(id).map {
-            convertAlarm(it)
-        }
+        return alarmDb.getAlarmById(id).map(::convertAlarm)
     }
 
     override fun getAlarms(): Observable<List<AlarmEntity>> {
         return alarmDb.getAlarms().map {
-            it.map { entity ->
-                convertAlarm(entity)
-            }
+            it.map(::convertAlarm)
         }
     }
 
